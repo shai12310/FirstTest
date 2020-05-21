@@ -7,14 +7,14 @@ pipeline
 		{
 			steps
 			{
-				echo ### Init step ###
+				"echo ### Init step ###"
 			}
 		}
 		stage ('Build')
 		{
 			steps
 			{
-				echo ### Build step ###
+				echo "### Build step ###"
 				bat 'nuget restore ConsoleApp1.sln'
 				bat "\"${tool 'MSBuild'}\" SolutionName.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
 
@@ -24,7 +24,7 @@ pipeline
 		{
 			steps
 			{
-				echo ### Deploy step ###
+				echo "### Deploy step ###"
 			}
 		}
 	}
