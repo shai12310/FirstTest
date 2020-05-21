@@ -7,7 +7,7 @@ pipeline
 		{
 			steps
 			{
-				"echo ### Init step ###"
+				echo "### Init step ###"
 			}
 		}
 		stage ('Build')
